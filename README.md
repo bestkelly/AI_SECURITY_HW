@@ -1,12 +1,12 @@
 # Pytorch CIFAR10图像分类 
-## 4.定义网络（VGG）
+## 定义网络（VGG）
 
 VGG模型是Oxford的Visual Geometry Group的组提出的，这个网络是在ILSVRC 2014上进行相关的工作，在ILSVRC 2014中超过Alex Net网络，拿到了当时分类项目的top 2 和 定位项目的top 1，VGGNet的拓展性很强，迁移到其他图片数据上的泛化性非常好。从此VGG进入了我们的视野，主要证明了增加网络的深度能够在一定程度上影响了网络最终的性能。
 
 VGG net可以说是从Alex-net发展而来的网络，VGGNet论文中全部使用了3x3的卷积核和2x2的池化核，通过不断加深网络结构来提升性能，现在主要的都是VGG16和VGG19，顾名思义，就是有16层和19层。
 在论文[《Very Deep Convolutional Networks for Large-Scale Image Recognition》](https://arxiv.org/abs/1409.1556)详细的给出了VGG的详细介绍，D和E分别就是我们的VGG16和VGG19。先以VGG16为例子，VGG有16层，我把它分为六块.
 
-![vgg](img/vgg.png)
+
 
 **VGG-16 一些性质：**
 
@@ -97,7 +97,6 @@ class VGG(nn.Module):
 net = VGG('VGG16').to(device)
 ```
 
-![vgg19](img\vgg19.png)
 
 ```python
 summary(net,(3,32,32))
